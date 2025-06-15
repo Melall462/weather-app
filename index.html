@@ -5,9 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Get User Location</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="cords"></div>
-    <script src="script.js" type="module"></script>
+    <div class="weather-container">
+      <div class="spinner" id="spinner"></div>
+
+      <div class="weather-info">
+        <div class="country">Country...</div>
+        <div class="city">City...</div>
+        <div class="village">Town...</div>
+        <div class="weather-type">Weather...</div>
+        <div class="weather-emoji">
+          <span style="font-size: 80px;">Weather...</span>
+        </div>
+        <div class="temperature">Temperature...</div>
+        <div class="weather-details">
+          <i class="fa-solid fa-cloud-rain"></i>
+          <div class="percipitation">: -- mm</div>
+          <span>|</span>
+          <i class="fa-solid fa-droplet"></i>
+          <div class="humidity">: --%</div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

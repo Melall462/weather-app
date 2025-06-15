@@ -1,0 +1,126 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(255deg, #226c84, rgb(81, 109, 209));
+  color: white;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  background: linear-gradient(-150deg, #24ac73, #2471ac);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.country {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.city {
+  font-size: 30px;
+}
+
+.village {
+  font-size: 24px;
+}
+
+.weather-emoji {
+  font-size: 100px;
+  margin-bottom: -20px;
+  margin-top: -20px;
+}
+
+.temperature {
+  font-size: 20px;
+}
+
+.percipitation,
+.humidity {
+  display: inline-block;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  font-size: 18px;
+}
+
+.country,
+.city,
+.village,
+.temperature,
+.weather-type,
+.weather-emoji {
+  margin: 3px 0;
+}
+
+@media (max-width: 500px) {
+  .weather-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .weather-app-title {
+    font-size: 36px;
+  }
+}
+
+.weather-container:hover {
+  position: relative;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Spinner styles */
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  z-index: 10;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Weather info fade-in */
+.weather-info {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.weather-info.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
